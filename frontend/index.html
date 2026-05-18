@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Flashcard Quiz</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">AI Study Assistant</p>
+          <h1>Flashcard Quiz</h1>
+          <p class="subtitle">
+            Upload lesson files or questionnaires. Generate flashcards, solve
+            missing answers, take quizzes, edit cards, export sets, and review
+            history.
+          </p>
+        </div>
+
+        <button id="themeToggleBtn" class="theme-toggle" type="button">
+          🌙 Dark Mode
+        </button>
+      </header>
+
+      <section class="control-card">
+        <div class="control-grid">
+          <div class="field-group file-field">
+            <label for="fileInput">Upload file</label>
+            <input type="file" id="fileInput" accept=".pdf,.docx" />
+          </div>
+
+          <div class="field-group">
+            <label for="countSelect">Number of cards</label>
+            <select id="countSelect">
+              <option value="10">10 cards</option>
+              <option value="20" selected>20 cards</option>
+              <option value="30">30 cards</option>
+              <option value="50">50 cards</option>
+            </select>
+          </div>
+
+          <div class="field-group action-field">
+            <label>&nbsp;</label>
+            <button id="generateBtn" class="primary-btn">
+              Generate Flashcards
+            </button>
+          </div>
+        </div>
+
+        <p id="status" class="status-text">
+          Choose a PDF or DOCX file to begin.
+        </p>
+      </section>
+
+      <section class="toolbar-card">
+        <div class="toolbar-left">
+          <button id="flashcardModeBtn" class="secondary-btn">
+            Flashcard Mode
+          </button>
+          <button id="quizModeBtn" class="secondary-btn">Quiz Mode</button>
+        </div>
+
+        <div class="toolbar-right">
+          <button id="exportJsonBtn" class="ghost-btn">Export JSON</button>
+          <button id="exportCsvBtn" class="ghost-btn">Export CSV</button>
+          <button id="exportTxtBtn" class="ghost-btn">Export TXT</button>
+        </div>
+      </section>
+
+      <section class="summary-card">
+        <div>
+          <span class="summary-label">Current set</span>
+          <div id="setInfo">No set loaded.</div>
+        </div>
+
+        <div>
+          <span class="summary-label">Quiz progress</span>
+          <div id="scoreBox">Score: 0 / 0</div>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="history-panel">
+          <div class="history-header">
+            <div>
+              <span class="summary-label">Saved sets</span>
+              <h2>History</h2>
+            </div>
+            <button id="refreshHistoryBtn" class="ghost-btn small-btn">
+              Refresh
+            </button>
+          </div>
+
+          <div id="historyList"></div>
+        </aside>
+
+        <section class="content-panel">
+          <div id="flashcards"></div>
+          <div id="quizContainer" class="hidden"></div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+
+# Secret environment variables
+.env
+
+# Uploaded user files and generated history
+uploads/
+history/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
